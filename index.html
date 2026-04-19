@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Q4 DRILL 2</title>
-
 <style>
  body {
-    background-color: aqua;
-    padding: 50px;
+    background-image: url('background.heat.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: #666666;
+    padding: 30px;
     border-radius: 10px;
 
 }
@@ -35,7 +39,7 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    background-color: black;
 }
 
 </style>
@@ -66,16 +70,16 @@ button {
 
                 switch (true){
                     case (heatIndex < 27):
-                        classify = "Low";
+                        classify = "Comfortable/Cool";
                         break;
                     case (heatIndex >= 27 && heatIndex < 32):
-                        classify = "Moderate";
+                        classify = "Warm";
                         break;
                     case (heatIndex >= 32 && heatIndex < 41):
-                        classify = "High";
+                        classify = "Hot";
                         break;
                     case (heatIndex >= 41):
-                        classify = "Extreme";
+                        classify = "Extreme Heat/Dangerous";
                         break;
                         default: classify = "Invalid input";
                 }
