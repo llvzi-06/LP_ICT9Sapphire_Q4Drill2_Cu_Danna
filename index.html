@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Q4 DRILL 2</title>
+
+<style>
+ body {
+    background-color: aqua;
+    padding: 50px;
+}
+
+.container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+h3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+
+
+</head>
+<body>
+ <div class="container"> 
+         <h3> Heat Index Checker</h3>
+         <p> Enter current temperature in Celsius </p>
+            <input type="number" id="temperature" placeholder="Temperature in Celsius">
+         <br>
+          <p> Enter current humidity percentage </p>
+            <input type="number" id="humidity" placeholder="Humidity in %">
+          </p>
+          <button onclick="calculateHeatIndex()">Calculate Heat Index</button>
+          <script>
+               function calculateHeatIndex(){
+                var tempC = Number(document.getElementById("temperature").value);
+                var humidity = Number(document.getElementById("humidity").value);
+                
+                if (tempC ==="" || humidity ==="") {
+                    alert("Please enter both temperature and humidity values.");
+                    return;
+                }
+                var heatIndex = tempC + (0.333 * humidity) - 4;
+                let classify = "";
+
+                switch (true){
+                    case (heatIndex < 27):
+                        classify = "Low";
+                        break;
+                    case (heatIndex >= 27 && heatIndex < 32):
+                        classify = "Moderate";
+                        break;
+                    case (heatIndex >= 32 && heatIndex < 41):
+                        classify = "High";
+                        break;
+                    case (heatIndex >= 41):
+                        classify = "Extreme";
+                        break;
+                        default: classify = "Invalid input";
+                }
+                alert("Heat Index:" + classify);
+               }
+
+
+
+          </script>
+           
+
+ </div>
+
+</body>
+</html>
